@@ -2,7 +2,7 @@
 <Script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Commands>
     <ScriptAction>
-      <ScriptCommand xsi:type="CommentCommand" CommandID="004208a9-e97c-44b6-9fad-b557e08c1921" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="1" PauseBeforeExeucution="false" v_Comment="Create the excel instance" CommandEnabled="true" />
+      <ScriptCommand xsi:type="CommentCommand" CommandID="004208a9-e97c-44b6-9fad-b557e08c1921" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="1" PauseBeforeExeucution="false" v_Comment="Create the excel instance." CommandEnabled="true" />
     </ScriptAction>
     <ScriptAction>
       <ScriptCommand xsi:type="ExcelCreateApplicationCommand" CommandID="d3063a33-502b-495f-bf90-35c809d152ce" CommandName="ExcelOpenApplicationCommand" IsCommented="false" SelectionName="Create Excel Application" DefaultPause="0" LineNumber="2" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" />
