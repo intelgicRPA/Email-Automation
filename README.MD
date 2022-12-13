@@ -1,11 +1,8 @@
 [<img src="https://www.intelgic.com/static/img/intelgic.png" width="200">](https://www.intelgic.com/ "Powered By Intelgic")
---
-
+  
 
  📧 Email Automation
 ============
-
-[TOCM]
 
 # :sparkler: Read Gmail Inbox Using IMAP
 This bot can be used to read the unread emails from gmail and save the attachments.
