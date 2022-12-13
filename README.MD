@@ -20,7 +20,8 @@ This bot can be used to read the unread emails from gmail and save the attachmen
 3. Set Gmail credentials `(Line:9-10)`. 
 	- ***Please note:*** *Your regular password can not be used here. Create your [app password](https://support.google.com/mail/answer/185833?hl=en "Sign in with App Passwords") from Google Accounts page.*
 4. Set path to the directory where you want the attachments files to be saved `(Line: 12)`.
-5. Run the bot.
+5. Save the bot.
+6. Run the bot.
 
 > ***Optional:*** You can double click on `Line 15` and use the date-wise filter option and filter by subject option. Please note: to use the date-wise filter you should need to enter the date in `MM\dd\yyyy` format.
 
@@ -38,9 +39,10 @@ This bot can be used to read the unread emails from outlook and save the attachm
 1.  Open Outlook and setup your email account
 2. Import the script xml file to your working directory of Dwmaker. `Default: My Scripts`
 3. Set the path of the excel file where details will be saved `(Line: 4)`
-4. Set Gmail credentials `(Line:9)`
+4. Set the email ID which has been configured in Outlook `(Line:9)`
 5. Set path to the directory where you want the attachments files to be saved `(Line: 12)`.
-6. Run the bot.
+6. Save the bot.
+7. Run the bot.
 
 > ***Optional:*** You can double click on `Line 15` and use the date-wise filter option and filter by subject option. Please note: to use the date-wise filter you should need to enter the date in `MM\dd\yyyy` format.
 
