@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Commands>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="8ebe65ac-ade1-45c7-af77-a8484a8c04c0" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="1" PauseBeforeExeucution="false" v_Comment="Create the excel instance" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="ExcelCreateApplicationCommand" CommandID="ba0dcb34-a868-4db0-8261-634aa23b7a95" CommandName="ExcelOpenApplicationCommand" IsCommented="false" SelectionName="Create Excel Application" DefaultPause="0" LineNumber="2" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="2e51b3fc-459d-4f64-9714-814d46b60510" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="3" PauseBeforeExeucution="false" v_Comment="Set full path of excel file where the unread email details will be saved" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="VariableCommand" CommandID="bfd72587-58dd-408b-9302-e1bf2710acc3" CommandName="VariableCommand" IsCommented="false" SelectionName="Set Variable" DefaultPause="0" LineNumber="4" PauseBeforeExeucution="false" CommandEnabled="true" v_userVariableName="excelPath" v_Input="C:\path\to\your\excel_file.xlsx" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="ExcelOpenWorkbookCommand" CommandID="f007d904-f0eb-4e14-80b4-efe2a6c85fe8" CommandName="ExcelOpenWorkbookCommand" IsCommented="false" SelectionName="Open Workbook" DefaultPause="0" LineNumber="5" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_FilePath="[excelPath]" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="b1f2b5a2-88c4-4d68-8f78-58a809ce4258" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="6" PauseBeforeExeucution="false" v_Comment="Get the last filled up row to start writing after that" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="ExcelGetLastRowCommand" CommandID="988bc036-4e4d-4eac-9d03-1289a5609a27" CommandName="ExcelGetLastRowCommand" IsCommented="false" SelectionName="Get Last Row Index" DefaultPause="0" LineNumber="7" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_ColumnLetter="A" v_applyToVariableName="lastRow" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="f83b1049-bdff-400d-8562-e8e118f97928" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="8" PauseBeforeExeucution="false" v_Comment="Set your email ID" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="VariableCommand" CommandID="9cc83206-5366-4e7f-894a-2a18b7338e23" CommandName="VariableCommand" IsCommented="false" SelectionName="Set Variable" DefaultPause="0" LineNumber="9" PauseBeforeExeucution="false" CommandEnabled="true" v_userVariableName="username" v_Input="your_email@example.com" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="abf9f7f8-5fa2-4f86-a32f-fcf5820edee1" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="10" PauseBeforeExeucution="false" v_Comment="Set the directory path where attchments will be saved" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="VariableCommand" CommandID="479cbadc-03da-4c32-bc1d-5c88be53cad8" CommandName="VariableCommand" IsCommented="false" SelectionName="Set Variable" DefaultPause="0" LineNumber="11" PauseBeforeExeucution="false" CommandEnabled="true" v_userVariableName="attachmentPath" v_Input="C:\path\your\attachment\directory" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="TryCommand" CommandID="8d87cebf-765a-4687-937f-4d4e3e089a34" CommandName="TryCommand" IsCommented="false" SelectionName="Try" DefaultPause="0" LineNumber="12" PauseBeforeExeucution="false" CommandEnabled="true" />
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="CommentCommand" CommandID="3397f88b-5856-4513-be97-a2b5cc91da82" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="13" PauseBeforeExeucution="false" v_Comment="Try to connect to gmail and loop through the unread emails" CommandEnabled="true" />
+      </AdditionalScriptCommands>
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="OutlookGetEmailCommand" CommandID="a6783bc8-4aa6-42a4-8baa-2c1adeb1741b" CommandName="OutlookGetEmailCommand" IsCommented="false" SelectionName="Read Outlook Email" DefaultPause="0" LineNumber="14" PauseBeforeExeucution="false" CommandEnabled="true" v_EmailID="[username]" v_Cfolder="Inbox" v_IMAPMsgFormat="Html" v_MarkAsRead="No" v_UnRead="Yes" v_DateOption="All Date" v_EmailDate="" v_ImportPath="[attachmentPath]" />
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="CommentCommand" CommandID="9465119b-10b3-4e2b-a90b-a598f9e93cae" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="15" PauseBeforeExeucution="false" v_Comment="Increasing last row to start writing from last row" CommandEnabled="true" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="VariableCommand" CommandID="4450541d-148d-436c-a8fe-acc07ba17b30" CommandName="VariableCommand" IsCommented="false" SelectionName="Set Variable" DefaultPause="0" LineNumber="16" PauseBeforeExeucution="false" CommandEnabled="true" v_userVariableName="lastRow" v_Input="[lastRow]+1" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="CommentCommand" CommandID="79543dd1-e734-444e-8ca7-6cab38fc6762" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="17" PauseBeforeExeucution="false" v_Comment="Write email details" CommandEnabled="true" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="ExcelSetCellCommand" CommandID="ca8d4dac-1e24-4ced-be07-d439b8710279" CommandName="ExcelSetCellCommand" IsCommented="false" SelectionName="Set Cell" DefaultPause="0" LineNumber="18" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_TextToSet="[FromEmail]" v_ExcelCellAddress="A[lastRow]" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="ExcelSetCellCommand" CommandID="de189286-570d-4d5b-8ef2-8b5b65a573ee" CommandName="ExcelSetCellCommand" IsCommented="false" SelectionName="Set Cell" DefaultPause="0" LineNumber="19" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_TextToSet="[EmailDateTime]" v_ExcelCellAddress="B[lastRow]" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="ExcelSetCellCommand" CommandID="79c50f48-e9af-4fcc-ac42-cb0bcf8959c7" CommandName="ExcelSetCellCommand" IsCommented="false" SelectionName="Set Cell" DefaultPause="0" LineNumber="20" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_TextToSet="[EmailSubject]" v_ExcelCellAddress="C[lastRow]" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="ExcelSetCellCommand" CommandID="60284fb3-4fa2-473e-90cb-b1abdcb4ee56" CommandName="ExcelSetCellCommand" IsCommented="false" SelectionName="Set Cell" DefaultPause="0" LineNumber="21" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_TextToSet="[AttachmentPath]\[AttachmentFiles]" v_ExcelCellAddress="D[lastRow]" />
+        </AdditionalScriptCommands>
+        <AdditionalScriptCommands>
+          <ScriptCommand xsi:type="EndLoopCommand" CommandID="74852674-11c4-49fe-84cb-ae88aa901195" CommandName="EndLoopCommand" IsCommented="false" SelectionName="End Loop" DefaultPause="0" LineNumber="22" PauseBeforeExeucution="false" CommandEnabled="true" />
+        </AdditionalScriptCommands>
+      </AdditionalScriptCommands>
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="CatchExceptionCommand" CommandID="01b4e80f-d3a2-4cab-ad98-d2b4929a3f78" CommandName="CatchExceptionCommand" IsCommented="false" SelectionName="Catch Exception" DefaultPause="0" LineNumber="23" PauseBeforeExeucution="false" v_Comment="Items in this section will run if error occurs" CommandEnabled="true" />
+      </AdditionalScriptCommands>
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="CommentCommand" CommandID="621cf5f9-b345-48a8-a5da-317b945c6855" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="24" PauseBeforeExeucution="false" v_Comment="Connection was not successful" CommandEnabled="true" />
+      </AdditionalScriptCommands>
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="MessageBoxCommand" CommandID="c8cf5a38-f78d-41a8-8b82-028c49c552d3" CommandName="MessageBoxCommand" IsCommented="false" SelectionName="Print" DefaultPause="0" LineNumber="25" PauseBeforeExeucution="false" CommandEnabled="true" v_Message="There are some error with the credentials you have entered. Please recheck your credentials." v_AutoCloseAfter="20" />
+      </AdditionalScriptCommands>
+      <AdditionalScriptCommands>
+        <ScriptCommand xsi:type="EndTryCommand" CommandID="24228abb-861f-4fd5-878a-3fb480139fee" CommandName="EndTryCommand" IsCommented="false" SelectionName="End Try" DefaultPause="0" LineNumber="26" PauseBeforeExeucution="false" CommandEnabled="true" />
+      </AdditionalScriptCommands>
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="CommentCommand" CommandID="99c73631-abc0-42df-8bd0-04f4990a1ad8" CommandName="CommentCommand" IsCommented="false" SelectionName="Comment Line" DefaultPause="0" LineNumber="27" PauseBeforeExeucution="false" v_Comment="Save the excel and close" CommandEnabled="true" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="ExcelCloseApplicationCommand" CommandID="2ddb4919-6d66-40ec-b42a-23760b60a0fc" CommandName="ExcelCloseApplicationCommand" IsCommented="false" SelectionName="Close Excel Application" DefaultPause="0" LineNumber="28" PauseBeforeExeucution="false" CommandEnabled="true" v_InstanceName="emailDetails" v_ExcelSaveOnExit="true" />
+    </ScriptAction>
+  </Commands>
+  <Variables>
+    <ScriptVariable>
+      <VariableName>Subject 1</VariableName>
+      <VariableValue xsi:type="xsd:string">attachment.txt</VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>Subject 2</VariableName>
+      <VariableValue xsi:type="xsd:string">document.pdf</VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>Subject 3</VariableName>
+      <VariableValue xsi:type="xsd:string">spreadsheet.xlsx</VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>Subject 4</VariableName>
+      <VariableValue xsi:type="xsd:string">document.pdf</VariableValue>
+    </ScriptVariable>
+  </Variables>
+</Script>
