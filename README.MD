@@ -11,7 +11,7 @@ This bot can be used to read the unread emails from gmail and save the attachmen
 - Filter emails by date
 - Filter emails by subject
 
-### :ok: How to use?
+### :heavy_check_mark: How to use?
 1. Import the script xml file to Dwmaker
 2. Set the path of the excel file where details will be saved (Line: 4)
 3. Set Gmail credentials (Line:8-9). Please note: Your regular password can not be used here. Create your app password from Google Accounts page.
