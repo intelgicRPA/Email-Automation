@@ -1,21 +1,22 @@
 [<img src="https://www.intelgic.com/static/img/intelgic.png" width="200">](https://www.intelgic.com/ "Powered By Intelgic")
-# 📧 Email Automation
+ 📧 Email Automation
+============
 
 ### Table of contents:
-1. [Read Gmail Inbox Using IMAP](#read-gmail-inbox-using-imap "Read Gmail Inbox Using IMAP")
-2. [Read Outlook Inbox](#read-outlook-inbox "Read Outlook Inbox") 
+1. [Read Gmail Inbox Using IMAP](#read-gmail-inbox-using-imap)
+2. [Read Outlook Inbox](#read-outlook-inbox) 
 
-## :sparkler: Read Gmail Inbox Using IMAP
+# :sparkler: Read Gmail Inbox Using IMAP
 This bot can be used to read the unread emails from gmail and save the attachments.
 
-### 🔥 Features:
+## 🔥 Features:
 - Read the unread emails from Gmail using IMAP
 - Save the required details on an excel sheet
 - Save the attachment on the specified folder
 - Filter emails by date
 - Filter emails by subject
 
-### :heavy_check_mark: How to use?
+## :heavy_check_mark: How to use?
 1. Import the script xml file to your working directory of Dwmaker. `Default: My Scripts`
 2. Set the path of the excel file where details will be saved `(Line: 4)`
 3. Set Gmail credentials `(Line:9-10)`. 
@@ -25,17 +26,17 @@ This bot can be used to read the unread emails from gmail and save the attachmen
 
 > ***Optional:*** You can double click on `Line 15` and use the date-wise filter option and filter by subject option. Please note: to use the date-wise filter you should need to enter the date in `MM\dd\yyyy` format.
 
-## :sparkler: Read Outlook Inbox
+# :sparkler: Read Outlook Inbox
 This bot can be used to read the unread emails from outlook and save the attachments.
 
-### 🔥 Features:
+## 🔥 Features:
 - Read the unread emails from Outlook
 - Save the required details on an excel sheet
 - Save the attachment on the specified folder
 - Filter emails by date
 - Filter emails by subject
 
-### :heavy_check_mark: How to use?
+## :heavy_check_mark: How to use?
 1.  Open Outlook and setup your email account
 2. Import the script xml file to your working directory of Dwmaker. `Default: My Scripts`
 3. Set the path of the excel file where details will be saved `(Line: 4)`
